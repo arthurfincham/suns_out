@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'weatherapi-com.p.rapidapi.com'
-    request["x-rapidapi-key"] = 'e020022066msh9c203a2c76a6131p182294jsn2446e1c73111'
+    request["x-rapidapi-key"] = ENV["RAPID_API_KEY"]
 
     response = http.request(request)
     data = response.read_body
