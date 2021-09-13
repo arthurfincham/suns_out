@@ -17,5 +17,6 @@ class HomeController < ApplicationController
     response = http.request(request)
     data = response.read_body
     @output = JSON.parse(data)
+    @forecast = @output["forecast"]["forecastday"]
   end
 end
