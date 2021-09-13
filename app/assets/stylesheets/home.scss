@@ -1,3 +1,18 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 90vh;
+}
+
+.weather-card {
+  height: 100px;
+  width: 150px;
+  border: 1px solid black;
+  background-color: rgb(235, 235, 235);
+  padding: 20px;
+}

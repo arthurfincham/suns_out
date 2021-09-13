@@ -1,11 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<code>
-  <%= location %><br><br>
+<%= location %><br><br>
+<div class="weather-container">
   <% @forecast.each do |day| %>
-    <%= day_formatter(day["date"])%><br>
-     <%= description(day) %><br>
-     High = <%= temp_hi(day) %> c<br>
-     Low = <%= temp_lo(day) %> c<br><br>
+  <div class="weather-card">
+    <strong><%= day_formatter(day["date"])%></strong><br>
+    <%= description(day) %><br>
+    <%= temp_hi(day) %> c<br>
+    <%= temp_lo(day) %> c<br><br>
+  </div>
   <% end %>
-</code>
+</div>
