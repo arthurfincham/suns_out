@@ -1,2 +1,17 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+<code>
+  <%= @output["location"]["name"] %><br><br>
+  <% @output["forecast"]["forecastday"].each do |day| %>
+    <% if day["date"] == Date.today.to_s %>
+     <%= 'Today' %><br>
+    <% elsif day["date"] == (Date.today + 1).to_s %>
+      <%= 'Tomorrow' %><br>
+    <% else %>
+      <%= Date.parse(day["date"]).strftime("%A")%><br>
+    <% end %>
+     <%= day["day"]["condition"]["text"] %><br>
+     High = <%= day["day"]["maxtemp_c"] %> c<br>
+     Low = <%= day["day"]["mintemp_c"] %> c<br><br>
+  <% end %>
+</code>
